@@ -1,0 +1,19 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Alterar Jornalista</title>
+</h:head>
+<h:body>
+	<h:form>
+		<p:outputLabel value="Nome: " />
+		<p:selectOneMenu value="#{jornalistaBean.jornalista.id}">
+			<f:selectItems value="#{jornalistaBean.listar}" var="j"
+				itemLabel="#{j.nome}" itemValue="#{j.id}" />
+		</p:selectOneMenu>
+		<p:inputText value="#{jornalistaBean.jornalista.nome}" />
+		<p:commandButton value="Salvar" action="#{jornalistaBean.alterar}" />
+	</h:form>
+</h:body>
+</html>

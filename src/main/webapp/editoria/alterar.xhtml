@@ -1,0 +1,19 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Alterar Editoria</title>
+</h:head>
+<h:body>
+	<h:form>
+		<p:outputLabel value="Nome: " />
+		<p:selectOneMenu value="#{editoriaBean.editoria.id}">
+			<f:selectItems value="#{editoriaBean.lista}" var="e"
+				itemLabel="#{e.nome}" itemValue="#{e.id}" />
+		</p:selectOneMenu>
+		<p:inputText value="#{editoriaBean.editoria.nome}" />
+		<p:commandButton value="Salvar" action="#{editoriaBean.alterar}" />
+	</h:form>
+</h:body>
+</html>
